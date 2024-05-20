@@ -1,0 +1,50 @@
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Aviso de Mantenimiento</title>
+                <link rel="stylesheet" href="styles.css">
+            </head>
+            <body>
+                <div class="container">
+                    <h1>Aviso de Mantenimiento</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Número de Aviso</th>
+                                <th>Creador del aviso</th>
+                                <th>Fecha del Aviso</th>
+                                <th>Hora del aviso</th>
+                                <th>Maquina averiada</th>
+                                <th>Descripcion de la avería o la solicitud a Mantenimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se generará el contenido de las filas de la tabla -->
+                        </tbody>
+                    </table>
+                    <button onclick="deleteAllData()">Borrar Todos los Datos</button>
+                    <button onclick="downloadExcel()">Descargar Excel</button>
+                </div>
+                <script>
+                    function deleteAllData() {
+                        fetch('/delete-all-data', { method: 'DELETE' })
+                            .then(response => {
+                                if (response.ok) {
+                                    alert('Todos los datos han sido borrados.');
+                                    location.reload();
+                                } else {
+                                    alert('Error al borrar los datos.');
+                                }
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
+            
+                    function downloadExcel() {
+                        window.location.href = '/download-excel';
+                    }
+                </script>
+            </body>
+            </html>
+            

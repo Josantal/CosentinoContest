@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Mantenimiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aviso de Mantenimiento</h1>
+        <form id="maintenanceForm">
+            <label for="orderNumber">Número de Aviso:</label>
+            <input type="text" id="orderNumber" name="orderNumber" required>
+
+            <label for="executor">Creador del aviso:</label>
+            <input type="text" id="executor" name="executor" required>
+
+            <label for="startDate">Fecha del Aviso:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="noticeNumber">Hora del aviso:</label>
+            <input type="time" id="noticeNumber" name="noticeNumber" required>
+
+            <label for="jobDescription">Maquina averiada:</label>
+            <textarea id="jobDescription" name="jobDescription" required></textarea>
+
+            <label for="operatorName">Descripcion de la avería o la solicitud a Mantenimiento:</label>
+            <input type="text" id="operatorName" name="operatorName" required>
+
+        
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
